@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : ""
-title_separator          : ""
+title                    : "Ian Murphy"
+title_separator          : "-"
 name                     : &name "Ian Murphy"
-description              : &description "personal description"
+description              : &description "Statistician, Grad Student, Human Being"
 url                      : https://iamurphy.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "iamurphy/iamurphy.github.io"
@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Ian Murphy"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Ontario, Canada"
+  bio              : "Master's candidate at UBC in Statistics"
+  location         : "Canada"
   employer         :
   pubmed           : 
   googlescholar    : 
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : "iamurphy"
   google_plus      :
   keybase          :
   instagram        : "ianmurphy1"
