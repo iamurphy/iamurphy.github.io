@@ -21,6 +21,10 @@ For my Master's thesis, I am currently working with two wonderful professors–D
 
 Work experience
 ======
+* Apr 2020 - Present: Statistical Consultant - UBC
+  * Collaborated with researchers to provide them with statistical consultations including complete analysis with final reports.
+  * Promoted to manager for the Short-Term Consulting Service (STCS) at UBC in Sept 2020 where I was able to lead a team of statisticians, and assign and assist with other statistical cases.  
+
 * Jan - May 2020: Data Scientist - Vision Critical (Alida)
   * Duties included: Worked on a customer churn algorithm using survival analysis techniques. Found, cleaned, and verified lots of messy, messy, messy data.
   * Worked with R, SQL, and Python
