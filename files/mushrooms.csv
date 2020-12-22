@@ -1,0 +1,17 @@
+﻿Run,Mushroom Type,Method,Length of Time (mins),Temperature (˚C),Rep. 1,Rep. 2,Rep. 3 ,Rep. 4
+1,Button,Rinse,1 ,10 ,0.117,0.106,0.091,0.368
+2,Button,Rinse,1 ,40,0.445,0.329,0.594,0.736
+3,Button,Rinse,5 ,10 ,0.245,0.157,0.394,0.42
+4,Button,Rinse,5 ,40,3.256,1.366,0.532,1.253
+5,Button,Soak,1 ,10 ,0.191,0.293,0.154,0.255
+6,Button,Soak,1 ,40,0.419,1.312,0.391,0.595
+7,Button,Soak,5 ,10 ,0.806,0.322,0.19,1.035
+8,Button,Soak,5 ,40,2.084,0.864,1.4,1.079
+9,Shiitake,Rinse,1 ,10 ,0.156,0.697,0.631,0.353
+10,Shiitake,Rinse,1 ,40,0.865,1.755,1.007,0.668
+11,Shiitake,Rinse,5 ,10 ,0.399,1.16,0.736,0.721
+12,Shiitake,Rinse,5 ,40,1.549,2.392,2.051,1.275
+13,Shiitake,Soak,1 ,10 ,0.242,0.408,0.41,0.424
+14,Shiitake,Soak,1 ,40,0.543,0.769,0.464,0.371
+15,Shiitake,Soak,5 ,10 ,0.632,0.95,0.728,0.81
+16,Shiitake,Soak,5 ,40,1.78,1.831,1.607,1.103
