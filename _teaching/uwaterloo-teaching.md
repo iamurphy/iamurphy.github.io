@@ -3,7 +3,7 @@ title: "UWaterloo"
 collection: teaching
 type: "Undergraduate Teaching Assistant"
 venue: "University of Waterloo"
-date: 2016-01-01
+date: 2014-09-01
 location: "Waterloo, Ontario"
 ---
 
