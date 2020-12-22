@@ -1,17 +1,17 @@
 ---
 title: "Teaching Experience"
 collection: teaching
-type: "Undergraduate course"
-permalink: /teaching/2014-spring-teaching-1
-venue: "University of Waterloo, Department of Computer Science"
+type: "Undergraduate Teaching Assistant"
+venue: "University of Waterloo"
 date: 2016-01-01
 location: "Waterloo, Ontario"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+During my undergraduate degree, I was able to be a teaching assistant while I was studying in academic terms as well as during some of a co-op terms. Duties included everything from marking to teaching tutorial to holding one-on-one office hours with students. Here are the following courses which I have been a teaching assistant for at the University of Waterloo:
 
-CS 116
-======
-
-CS 136
-======
+- CS 115 - Introduction to Computer Science (Part 1) 
+- CS 116 - Introduction to Computer Science (Part 2)
+- MATH 137 - Calculus 1 for Honours Mathematics
+- MATH 237 - Calculus 3 for Honours Mathematics
+- MATH 217 - Calculus 3 for Chemical Engineering
+- AMATH 231 - Calculus 4
