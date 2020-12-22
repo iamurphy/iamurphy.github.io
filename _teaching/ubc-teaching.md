@@ -3,7 +3,7 @@ title: "UBC"
 collection: teaching
 type: "Graduate Teaching Assistant"
 venue: "University of British Columbia, Department of Statistics"
-date: 2020-09-01
+date: 2019-09-01
 location: "Vancouver, British Columbia"
 ---
 
