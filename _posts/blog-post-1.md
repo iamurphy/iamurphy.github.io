@@ -80,7 +80,38 @@ summary(m1)
 Now, the output of this model produces the following:
 
 ```R
-Call:lm.default(formula = after ~ before + (Type + Method + Time +     Temperature)^3, data = mushroom)Residuals:     Min       1Q   Median       3Q      Max -0.92160 -0.14709 -0.01724  0.11342  1.62914 Coefficients:                                       Estimate Std. Error t value Pr(>|t|)    (Intercept)                           -0.190115   0.252476  -0.753   0.4551    before                                 1.015842   0.008688 116.922   <2e-16 ***TypeShiitake                           0.527066   0.266542   1.977   0.0538 .  MethodSoak                             0.169880   0.250796   0.677   0.5014    Time5                                  0.205668   0.250417   0.821   0.4155    Temperature40                          0.451557   0.250316   1.804   0.0775 .  TypeShiitake:MethodSoak               -0.313800   0.327782  -0.957   0.3432    TypeShiitake:Time5                    -0.126280   0.327923  -0.385   0.7019    TypeShiitake:Temperature40            -0.138730   0.328922  -0.422   0.6751    MethodSoak:Time5                       0.062436   0.327702   0.191   0.8497    MethodSoak:Temperature40              -0.157665   0.330825  -0.477   0.6358    Time5:Temperature40                    0.815384   0.328757   2.480   0.0167 *  TypeShiitake:MethodSoak:Time5          0.281966   0.378469   0.745   0.4599    TypeShiitake:MethodSoak:Temperature40 -0.045883   0.379764  -0.121   0.9043    TypeShiitake:Time5:Temperature40       0.083168   0.378876   0.220   0.8272    MethodSoak:Time5:Temperature40        -0.272521   0.378395  -0.720   0.4749    ---Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1Residual standard error: 0.3784 on 48 degrees of freedomMultiple R-squared:  0.998,	Adjusted R-squared:  0.9974 F-statistic:  1627 on 15 and 48 DF,  p-value: < 2.2e-16
+Call:
+lm.default(formula = after ~ before + (Type + Method + Time + 
+    Temperature)^3, data = mushroom)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.92160 -0.14709 -0.01724  0.11342  1.62914 
+
+Coefficients:
+                                       Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                           -0.190115   0.252476  -0.753   0.4551    
+before                                 1.015842   0.008688 116.922   <2e-16 ***
+TypeShiitake                           0.527066   0.266542   1.977   0.0538 .  
+MethodSoak                             0.169880   0.250796   0.677   0.5014    
+Time5                                  0.205668   0.250417   0.821   0.4155    
+Temperature40                          0.451557   0.250316   1.804   0.0775 .  
+TypeShiitake:MethodSoak               -0.313800   0.327782  -0.957   0.3432    
+TypeShiitake:Time5                    -0.126280   0.327923  -0.385   0.7019    
+TypeShiitake:Temperature40            -0.138730   0.328922  -0.422   0.6751    
+MethodSoak:Time5                       0.062436   0.327702   0.191   0.8497    
+MethodSoak:Temperature40              -0.157665   0.330825  -0.477   0.6358    
+Time5:Temperature40                    0.815384   0.328757   2.480   0.0167 *  
+TypeShiitake:MethodSoak:Time5          0.281966   0.378469   0.745   0.4599    
+TypeShiitake:MethodSoak:Temperature40 -0.045883   0.379764  -0.121   0.9043    
+TypeShiitake:Time5:Temperature40       0.083168   0.378876   0.220   0.8272    
+MethodSoak:Time5:Temperature40        -0.272521   0.378395  -0.720   0.4749    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.3784 on 48 degrees of freedom
+Multiple R-squared:  0.998,	Adjusted R-squared:  0.9974 
+F-statistic:  1627 on 15 and 48 DF,  p-value: < 2.2e-16
 ```
 
 If you are familiar with R, you can interpret this output quite easily. If not, the important point to notice here is that the interaction terms which we thought were not significant are in fact not statistically significant. They seem to provide nothing to the model, and only make it more difficult to interpret. This also coincides with our initial assumption from the interaction plots that the Time-Temperature interaction is the only significant one. Some may argue that I should keep these variables in the model for completeness, or perhaps that by selectively removing them I am introducing bias. And those people make some very good points. However, if we wish to predict the final weight of a mushroom that is exposed to a certain combination of treatments, by including these other terms, we can end up with weird estimates and large standard errors. So I am making the professional decision to remove the interaction terms which are non-significant. Moreover, this smaller model will be more compact and easier to interpret. Here is the output of the new model:
@@ -89,14 +120,45 @@ If you are familiar with R, you can interpret this output quite easily. If not, 
 m2 <- lm(after ~ before + Type + Method + Time + Temperature + Time*Temperature, data = mushroom)
 summary(m2)
 
-Call:lm.default(formula = after ~ before + Type + Method + Time +     Temperature + Time * Temperature, data = mushroom)Residuals:     Min       1Q   Median       3Q      Max -0.85284 -0.15476 -0.04546  0.11745  1.71746 Coefficients:                     Estimate Std. Error t value Pr(>|t|)    (Intercept)         -0.023197   0.192311  -0.121  0.90441    before               1.014054   0.008266 122.676  < 2e-16 ***TypeShiitake         0.300548   0.120567   2.493  0.01560 *  MethodSoak          -0.044210   0.091743  -0.482  0.63173    Time5                0.246489   0.130126   1.894  0.06327 .  Temperature40        0.296881   0.131747   2.253  0.02810 *  Time5:Temperature40  0.712869   0.186982   3.812  0.00034 ***---Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1Residual standard error: 0.3669 on 57 degrees of freedomMultiple R-squared:  0.9978,	Adjusted R-squared:  0.9976 F-statistic:  4326 on 6 and 57 DF,  p-value: < 2.2e-16
+Call:
+lm.default(formula = after ~ before + Type + Method + Time + 
+    Temperature + Time * Temperature, data = mushroom)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.85284 -0.15476 -0.04546  0.11745  1.71746 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         -0.023197   0.192311  -0.121  0.90441    
+before               1.014054   0.008266 122.676  < 2e-16 ***
+TypeShiitake         0.300548   0.120567   2.493  0.01560 *  
+MethodSoak          -0.044210   0.091743  -0.482  0.63173    
+Time5                0.246489   0.130126   1.894  0.06327 .  
+Temperature40        0.296881   0.131747   2.253  0.02810 *  
+Time5:Temperature40  0.712869   0.186982   3.812  0.00034 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.3669 on 57 degrees of freedom
+Multiple R-squared:  0.9978,	Adjusted R-squared:  0.9976 
+F-statistic:  4326 on 6 and 57 DF,  p-value: < 2.2e-16
 ```
 
 Now, if you are concerned about whether or not this smaller model has resulted in a significant reduction in information, we can check this via a likelihood ratio test. This tests the null hypothesis that the simpler model is adequate. The code and output is given below.
 
 ```R
 library(lmtest)
-lrtest(m2, m1)Likelihood ratio testModel 1: after ~ before + Type + Method + Time + Temperature + Time *     TemperatureModel 2: after ~ before + (Type + Method + Time + Temperature)^2  #Df  LogLik Df  Chisq Pr(>Chisq)1   8 -22.930                     2  13 -20.156  5 5.5477     0.3527
+lrtest(m2, m1)
+
+Likelihood ratio test
+
+Model 1: after ~ before + Type + Method + Time + Temperature + Time * 
+    Temperature
+Model 2: after ~ before + (Type + Method + Time + Temperature)^2
+  #Df  LogLik Df  Chisq Pr(>Chisq)
+1   8 -22.930                     
+2  13 -20.156  5 5.5477     0.3527
 ```
 
 The p-value from this test is large, indicating no evidence to reject the null hypothesis that the simpler model is adequate. Ok, we keep the simpler model! Let's look at this simpler model in more detail. If you are super keen as well, you would notice that the baseline term, $\texttt{before}$, is highly significant because there is a very, very, high correlation of this variable with the response variable. Moreover, the adjusted $R^2$ term for this model is very high because of the inclusion of this variable as well. 
