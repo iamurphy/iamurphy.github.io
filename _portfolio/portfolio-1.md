@@ -172,7 +172,7 @@ $$\begin{align}Y &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 
 
 Where $I()$ is an indicator function which equals 1 if the condition inside the brackets is satisfied and 0 otherwise. Now, let's consider two models. The first model is the average response for when time is set to 5 minutes and temperature is set to 40 degrees, holding all else constant. This model is:
 
-$$\begin{align}Y_1 &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ &+ 0.246 + 0.297 + 0.713\end{align}$$
+$$\begin{align}Y_1 = -0.023 &+ 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ &+ 0.246 + 0.297 + 0.713\end{align}$$
 
 Now, consider the exact same model, but this time, we set the temperature to be 10 degrees instead of 40. We get:
 
@@ -186,7 +186,7 @@ $$
 
 Similarly, let's consider two models where we hold time to be 1 minute, then see what happens when we change temperature. Those two models are:
 
-$$\begin{align*}Y_3 = -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ &+ 0.297\end{align*}$$
+$$\begin{align*}Y_3 = -0.023 &+ 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ &+ 0.297\end{align*}$$
 
 $$
 Y_4 = -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak)
