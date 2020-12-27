@@ -9,11 +9,11 @@ main:
   - title: "Talks"
     url: /talks/    
     
-  - title: "Portfolio"
+  - title: "Blog Posts"
     url: /portfolio/
         
-  - title: "Blog Posts"
-    url: /year-archive/
+#  - title: "Blog Posts"
+#    url: /year-archive/ 
     
   - title: "CV"
     url: /cv/
