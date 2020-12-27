@@ -171,24 +171,21 @@ Firstly, we note that the y-axis is the change in weight of the mushroom. Second
 
 So what about the estimate from the model? Well, the simpler, reduced model produces estimates for the main effects of Time and Temperature as 0.246 and 0.297 with the interaction effect estimated as 0.713. How can we interpret these numbers, specifically the interaction effect? Well, let's consider the general regression model.
 
-\begin{align*}
-Y &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\\\ 
-&+ 0.246 I(Time = 5) + 0.297 I(Temp = 40) + 0.713 I(Time = 5) * I(Temp = 40)
-\end{align*}
+$$\begin{align}Y &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ &+ 0.246 I(Time = 5) + 0.297 I(Temp = 40) + 0.713 I(Time = 5) * I(Temp = 40)\end{align}$$
 
 Where $I()$ is an indicator function which equals 1 if the condition inside the brackets is satisfied and 0 otherwise. Now, let's consider two models. The first model is the average response for when time is set to 5 minutes and temperature is set to 40 degrees, holding all else constant. This model is:
 
-\begin{align*}
-Y_1 &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\\\
+\begin{align}
+Y_1 &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ \\
 &+ 0.246 + 0.297 + 0.713
-\end{align*}
+\end{align}
 
 Now, consider the exact same model, but this time, we set the temperature to be 10 degrees instead of 40. We get:
 
-\begin{align*}
+\begin{align}
 Y_2 = -0.023 &+ 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\\\
 &+ 0.246
-\end{align*}
+\end{align}
 
 Subtracting these two models, we get the average change in the after-weight going from 40 degrees to 10 degrees when the time is 5 minutes, holding all else constant, which is:
 
