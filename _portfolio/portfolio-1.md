@@ -55,8 +55,8 @@ Alright, so what are we looking for, and what does all this mean? Well, from the
 The next step in this analysis is to produce some statistical models. Now, the simplest model, and probably the best model, is a linear regression. For this model, our goal is to model the final weight of the mushroom as a function of the aforementioned covariates while controlling for baseline mushroom weight. This is a typical pre-post analysis, and some may even call it ANCOVA. I call it linear regression and you should too. The model will take the following form for all my mathies out there.
 
 \begin{align}
-y_i = \beta_0 &+ \beta_1 x_i + \beta_2 \texttt{Type}_i + \beta_3 \texttt{Method}_i + \beta_4 \texttt{Time}_i + \beta_5 \texttt{Temperature}_i \\\\
-&+ \texttt{Interactions}_i + \epsilon_i
+y_i &= \beta_0 + \beta_1 x_i + \beta_2 \texttt{Type_i} + \beta_3 \texttt{Method_i} + \beta_4 \texttt{Time_i} + \beta_5 \texttt{Temperature_i} \\\\
+&+ \texttt{Interactions_i} + \epsilon_i
 \end{align}
 
 Where $y_i$ is the weight of the mushroom after exposure to treatment, $x_i$ is the baseline weight before exposure to treatment, and all those other covariates are indicator variables which are equal to 0 or 1 depending on which treatment is given to the $i^{th}$ mushroom. I also didn't type out all those interaction terms, but I'm sure you can visualize them accordingly. Finally, I included that $\epsilon_i$ term which is the random error that is assumed to be normally distributed with mean 0 and constant variance $\sigma^2$. Fitting this model in R with all two-order interactions, we get the following:
@@ -171,24 +171,24 @@ Firstly, we note that the y-axis is the change in weight of the mushroom. Second
 
 So what about the estimate from the model? Well, the simpler, reduced model produces estimates for the main effects of Time and Temperature as 0.246 and 0.297 with the interaction effect estimated as 0.713. How can we interpret these numbers, specifically the interaction effect? Well, let's consider the general regression model.
 
-\begin{align}
+\begin{align*}
 Y &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\\\ 
 &+ 0.246 I(Time = 5) + 0.297 I(Temp = 40) + 0.713 I(Time = 5) * I(Temp = 40)
-\end{align}
+\end{align*}
 
 Where $I()$ is an indicator function which equals 1 if the condition inside the brackets is satisfied and 0 otherwise. Now, let's consider two models. The first model is the average response for when time is set to 5 minutes and temperature is set to 40 degrees, holding all else constant. This model is:
 
-\begin{align}
-Y_1 = -0.023 &+ 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\\\
+\begin{align*}
+Y_1 &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\\\
 &+ 0.246 + 0.297 + 0.713
-\end{align}
+\end{align*}
 
 Now, consider the exact same model, but this time, we set the temperature to be 10 degrees instead of 40. We get:
 
-\begin{align}
+\begin{align*}
 Y_2 = -0.023 &+ 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\\\
 &+ 0.246
-\end{align}
+\end{align*}
 
 Subtracting these two models, we get the average change in the after-weight going from 40 degrees to 10 degrees when the time is 5 minutes, holding all else constant, which is:
 
@@ -198,10 +198,10 @@ $$
 
 Similarly, let's consider two models where we hold time to be 1 minute, then see what happens when we change temperature. Those two models are:
 
-\begin{align}
+\begin{align*}
 Y_3 = -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\\\
 &+ 0.297
-\end{align}
+\end{align*}
 
 $$
 Y_4 = -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak)
