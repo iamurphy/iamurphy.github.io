@@ -55,8 +55,8 @@ Alright, so what are we looking for, and what does all this mean? Well, from the
 The next step in this analysis is to produce some statistical models. Now, the simplest model, and probably the best model, is a linear regression. For this model, our goal is to model the final weight of the mushroom as a function of the aforementioned covariates while controlling for baseline mushroom weight. This is a typical pre-post analysis, and some may even call it ANCOVA. I call it linear regression and you should too. The model will take the following form for all my mathies out there.
 
 \begin{align}
-y_i &= \beta_0 + \beta_1 x_i + \beta_2 \texttt{Type_i} + \beta_3 \texttt{Method_i} + \beta_4 \texttt{Time_i} + \beta_5 \texttt{Temperature_i} \\\\
-&+ \texttt{Interactions_i} + \epsilon_i
+y_i &= \beta_0 + \beta_1 x_i + \beta_2 \texttt{Type}_i + \beta_3 \texttt{Method}_i + \beta_4 \texttt{Time}_i + \beta_5 \texttt{Temperature}_i \\\\
+&+ \texttt{Interactions}_i + \epsilon_i
 \end{align}
 
 Where $y_i$ is the weight of the mushroom after exposure to treatment, $x_i$ is the baseline weight before exposure to treatment, and all those other covariates are indicator variables which are equal to 0 or 1 depending on which treatment is given to the $i^{th}$ mushroom. I also didn't type out all those interaction terms, but I'm sure you can visualize them accordingly. Finally, I included that $\epsilon_i$ term which is the random error that is assumed to be normally distributed with mean 0 and constant variance $\sigma^2$. Fitting this model in R with all two-order interactions, we get the following:
