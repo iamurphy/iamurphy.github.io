@@ -171,7 +171,7 @@ Firstly, we note that the y-axis is the change in weight of the mushroom. Second
 So what about the estimate from the model? Well, the simpler, reduced model produces estimates for the main effects of Time and Temperature as 0.246 and 0.297 with the interaction effect estimated as 0.713. How can we interpret these numbers, specifically the interaction effect? Well, let's consider the general regression model.
 
 \begin{align}
-Y &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ 
+Y &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\\\ 
 &+ 0.246 I(Time = 5) + 0.297 I(Temp = 40) + 0.713 I(Time = 5) * I(Temp = 40)
 \end{align}
 
