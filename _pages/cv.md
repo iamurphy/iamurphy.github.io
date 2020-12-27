@@ -11,9 +11,9 @@ redirect_from:
 
 Education
 ======
-* B.Math - Joint Honours Applied Mathematics & Statistics, University of Waterloo, 2019
+* B.Math - Joint Honours Applied Mathematics & Statistics, Co-op Program, University of Waterloo, 2014-2019
 * M.Sc. - Statistics, University of British Columbia, 2019-Present
-* Ph.D - Soon? Spoilers!
+* Ph.D - Starting Soon? Spoilers!
 
 Research
 ======
