@@ -172,11 +172,11 @@ $$\begin{align}Y &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 
 
 Where $I()$ is an indicator function which equals 1 if the condition inside the brackets is satisfied and 0 otherwise. Now, let's consider two models. The first model is the average response for when time is set to 5 minutes and temperature is set to 40 degrees, holding all else constant. This model is:
 
-$$\begin{align}Y_1 = -0.023 &+ 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ &+ 0.246 + 0.297 + 0.713\end{align}$$
+$$\begin{align*}Y_1 = -0.023 &+ 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ &+ 0.246 + 0.297 + 0.713\end{align*}$$
 
 Now, consider the exact same model, but this time, we set the temperature to be 10 degrees instead of 40. We get:
 
-$$\begin{align}Y_2 = -0.023 &+ 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ &+ 0.246\end{align}$$
+$$\begin{align*}Y_2 = -0.023 &+ 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ &+ 0.246\end{align*}$$
 
 Subtracting these two models, we get the average change in the after-weight going from 40 degrees to 10 degrees when the time is 5 minutes, holding all else constant, which is:
 
@@ -186,11 +186,7 @@ $$
 
 Similarly, let's consider two models where we hold time to be 1 minute, then see what happens when we change temperature. Those two models are:
 
-$$\begin{align*}Y_3 = -0.023 &+ 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ &+ 0.297\end{align*}$$
-
-$$
-Y_4 = -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak)
-$$
+$$\begin{align*}Y_3 &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak) \\ & + 0.297 \\ Y_4 &= -0.023 + 1.014 \texttt{before} + 0.301 I(Type = Shiitake) - 0.044 I(Method = Soak)\end{align*}$$
 
 Subtracting these two models gives the average after-weight change going from 40 degrees to 10 degrees when then time is 1 minute.
 
@@ -219,7 +215,7 @@ Last but not least, what's the deal with that baseline term? Well, we included i
 
 Ok, so what now? We collected the data, we fit the model, we chose the model that is most appropriate for our purposes, we examined interaction effects, and now we are satisfied with the model. So what can we do? Well, our original question asked, "Do mushrooms absorb water?" and that is a resounding YES. They sure do! All the mushrooms in the experiment ended up gaining some water. None stayed the same, and none lost any water. So yes, they do gain water. Now, how much? And is that a significant amount? 
 
-Well, let's consider for example that you are making a delicious ribeye for dinner, and you want to make sautéed button mushrooms on the side. You like browned mushrooms, and not soggy mushrooms because who likes that??? Beforehand, you decide to clean the mushrooms. What should you do to avoid water logged mushrooms? Well, at this point, we can control three factors: time, temperature, and method. We've already established that the method does not matter, so we choose rinsing for simplicity. Next, we look at time and temperature. Let's set time to be 1 minute, and temperature to be 40 degrees. Suppose the single lonely mushroom that we decide to clean weighs only 20 grams. Then, we would expect the final weight of that mushroom to be: -0.023 + 1.014*20 + 0.297 + 0.713 = 21.267 grams. A measly 1.267 grams of water was absorbed. And if the recipe called for 10 mushrooms, all of which were 20 grams exactly. And we cleaned each one individually like we did in the experiment. Well, then the total amount of water absorbed would be expected to be 12.67 grams, or about 0.053 cups of water, which is around 2.6 teaspoons of water. Now, a tablespoon is 3 teaspoons, so that would be less than a tablespoon of water that is absorbed. Not too shabby!
+Well, let's consider for example that you are making a delicious ribeye for dinner, and you want to make sautéed button mushrooms on the side. You like browned mushrooms, and not soggy mushrooms because who likes that??? Beforehand, you decide to clean the mushrooms. What should you do to avoid water logged mushrooms? Well, at this point, we can control three factors: time, temperature, and method. We've already established that the method does not matter, so we choose rinsing for simplicity. Next, we look at time and temperature. Let's set time to be 1 minute, and temperature to be 40 degrees. Suppose the single lonely mushroom that we decide to clean weighs only 20 grams. Then, we would expect the final weight of that mushroom to be: $-0.023 + 1.014*20 + 0.297 + 0.713 = 21.267$ grams. A measly 1.267 grams of water was absorbed. And if the recipe called for 10 mushrooms, all of which were 20 grams exactly. And we cleaned each one individually like we did in the experiment. Well, then the total amount of water absorbed would be expected to be 12.67 grams, or about 0.053 cups of water, which is around 2.6 teaspoons of water. Now, a tablespoon is 3 teaspoons, so that would be less than a tablespoon of water that is absorbed. Not too shabby!
 
 How could we minimize the amount of water absorbed? Well, we would need to set all the indicators from our model to be 0. We do this by choosing: Button mushrooms that are rinsed for 1 minute in 10 degree water. 
 
